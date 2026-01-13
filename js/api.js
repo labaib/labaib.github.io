@@ -3,7 +3,7 @@
 // Tutte le funzioni sono async e restituiscono JSON
 
 const OWNER = 'labaib';
-const REPO = 'workspace';
+const REPO = 'labaib.github.io';
 
 // Headers Guithub API
 const HEADERS = {
