@@ -51,15 +51,12 @@ async function renderDashboard({
 }
 
 export async function renderMainDashboard(items) {
-    const discussions = await getDiscussions(100, 1);
     renderDashboard({
         containerId: 'dashboard',
         items,
         getLink: c => `#${encodeURIComponent(c.name)}`,
         showBadge: true
-    });
-    
-    renderTopics(discussions.reverse());
+    });    
 }
 
 
@@ -70,7 +67,6 @@ export async function renderTaggedDashboard(category) {
     const topics = discussions.filter(
         d => d.category?.name === category.name
     );
-    console.log(topics)
 
     // estrai i tag (label GitHub)
     const tags = [...new Set(
@@ -80,12 +76,23 @@ export async function renderTaggedDashboard(category) {
     const container = document.getElementById('topics-container');
 
     container.innerHTML = `
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
             <h3 class="mb-0">${category.name}</h3>
 
             <div class="d-flex gap-2">
                 <a href="#" class="btn btn-secondary">
                     ← Torna alla Dashboard
+                </a>
+                <a
+                    type="button"
+                    class="btn btn-success"
+                    href="https://github.com/labaib/labaib.github.io/discussions/new?category=${category.name.toLowerCase()}"
+                >
+                    📝 ${category === 'Q&A'
+                        ? 'Nuova domanda'
+                        : category === 'Votazioni'
+                        ? 'Nuova votazione'
+                        : 'Nuova discussione'}
                 </a>
             </div>
         </div>
@@ -113,5 +120,3 @@ export async function renderTaggedDashboard(category) {
     });
 
 }
-
-

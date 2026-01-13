@@ -1,12 +1,11 @@
 // Dinamic imports
 import { renderMainDashboard, renderTaggedDashboard } from '/js/sections/dashboard.js';
 import { renderQuickLinks } from '/js/sections/quicklinks.js';
-import { renderTopics } from '/js/sections/list.js';
 import { getDiscussions } from '/js/api.js';
-//import { renderTaggedDashboard } from '/js/sections/tag.js';
+import { openSection } from './sections/list.js';
 
 // Utils
-import { loadJSON, openSection } from '/js/utils.js';
+import { loadJSON } from '/js/utils.js';
 
 let categories = [];
 let discussions = [];
@@ -69,8 +68,6 @@ function handleHash() {
         return;
     }
 }
-
-
 
 function showDashboard() {
     document.getElementById('dashboard').style.display = '';
