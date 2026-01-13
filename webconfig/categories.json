@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Annunci",
+        "description": "Ultimi annunci e novità AIB",
+        "icon": "📢",
+        "color": "#ffe5e0",
+        "type": "list"
+    },
+    {
+        "name": "Generale",
+        "description": "Discussione generale e feedback sulla comunità.",
+        "icon": "💬",
+        "color": "#fff4e0",
+        "type": "tag-dashboard"
+    },
+    {
+        "name": "Documentazione",
+        "description": "Documentazione tecnica e guide per il workspace.",
+        "icon": "📘",
+        "color": "#e0f0ff",
+        "type": "tag-dashboard"
+    },
+    {
+        "name": "Q&A",
+        "description": "Domande e risposte su vari argomenti.",
+        "icon": "❓",
+        "color": "#f0fff0",
+        "type": "tag-dashboard"
+    },
+    {
+        "name": "Gruppi di lavoro",
+        "description": "Discussioni sui gruppi di lavoro AIB.",
+        "icon": "👥",
+        "color": "#ffe0ff",
+        "type": "tag-dashboard"
+    },
+    {
+        "name": "Proposte",
+        "description": "Proposte di miglioramento e nuove idee.",
+        "icon": "🧠",
+        "color": "#e0ffe5",
+        "type": "list"
+    },
+    {
+        "name": "Votazioni",
+        "description": "Sondaggi e votazioni della comunità.",
+        "icon": "🗳️",
+        "color": "#fff0ff",
+        "type": "list"
+    }
+]

@@ -1,0 +1,22 @@
+title: "[PROPOSTA] "
+labels: ["proposta"]
+body:
+  - type: textarea
+    id: descrizione
+    attributes:
+      label: Contesto
+      placeholder: Descrivi contesto, obiettivi e destinatari
+    validations:
+      required: true
+  - type: textarea
+    id: richiesta
+    attributes:
+      label: Proposta
+      placeholder: Es. commenti, adesioni, revisione
+    validations:
+      required: true
+  - type: input
+    id: link-votazione
+    attributes:
+      label: Link alla votazione (opzionale)
+      placeholder: Inserisci link alla votazione quando approvata

@@ -1,0 +1,17 @@
+title: "[DISCUSSIONE] "
+labels: ["discussione"]
+body:
+  - type: input
+    id: titolo
+    attributes:
+      label: Titolo della discussione
+      placeholder: Es. Catalogazione di nuove collezioni digitali
+    validations:
+      required: true
+  - type: textarea
+    id: messaggio
+    attributes:
+      label: Messaggio
+      placeholder: Scrivi il tuo contributo o domanda
+    validations:
+      required: true

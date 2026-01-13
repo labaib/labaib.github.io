@@ -1,0 +1,18 @@
+[
+    { 
+        "label": "📖 Guida introduttiva", 
+        "url": "https://github.com/labaib/labaib.github.io/wiki" 
+    },
+    { 
+        "label": "👤 Registrati a GitHub", 
+        "url": "https://github.com/join" 
+    },
+    { 
+        "label": "🔑 Richiedi accesso", 
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSfxPC7qOrwWSHsTPjKSH5LtvK8t8asR_jJx3Xrxu_CedgM4Og/viewform?usp=sharing&ouid=115647946904347500346" 
+    },
+    { 
+        "label": "🔔 Notifiche email", 
+        "url": "https://github.com/labaib/workspace/subscription" 
+    }
+]

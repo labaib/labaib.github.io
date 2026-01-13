@@ -1,0 +1,15 @@
+title: "📘 "
+labels: ["documentazione"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ Questa pagina è ufficiale e curata dai moderatori.
+        Per domande o suggerimenti apri una discussion in “Q&A”.
+  - type: textarea
+    id: contenuto
+    attributes:
+      label: Contenuto della pagina
+      placeholder: Inserisci il testo della documentazione
+    validations:
+      required: true

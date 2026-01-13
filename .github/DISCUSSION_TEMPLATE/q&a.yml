@@ -1,0 +1,17 @@
+title: "[DOMANDA] "
+labels: ["domanda"]
+body:
+  - type: input
+    id: titolo
+    attributes:
+      label: Oggetto della domanda
+      placeholder: Es. Esperienze con software open source per biblioteche scolastiche
+    validations:
+      required: true
+  - type: textarea
+    id: dettagli
+    attributes:
+      label: Dettagli
+      placeholder: Contesto, strumenti già valutati, ecc.
+    validations:
+      required: true
