@@ -1,26 +1,37 @@
-title: "TITOLO ANNUNCIO"
+title: ""
 labels: ["annuncio"]
 body:
-  - type: markdown
-    attributes:
-      value: |
-        ⚠️ Questa è una comunicazione ufficiale AIB. Leggi con attenzione.
   - type: input
     id: oggetto
     attributes:
-      label: Oggetto dell’annuncio
+      label: Oggetto
       placeholder: Es. Convocazione Assemblea AIB – marzo 2026
     validations:
       required: true
   - type: textarea
     id: testo
     attributes:
-      label: Testo dell’annuncio
+      label: Annuncio
       placeholder: Inserisci il testo completo
     validations:
       required: true
   - type: input
+    id: contatti
+    attributes:
+      label: Contatti
+      placeholder: Inserisci mail o numero di telefono
+  - type: input
     id: link
     attributes:
-      label: Link o allegati (opzionale)
+      label: Link / allegati
       placeholder: Inserisci link a documenti o pagine
+  - type: input
+    id: discussione
+    attributes:
+      label: Link discussione
+      placeholder: Inserisci link a discussione
+  - type: input
+    id: voto
+    attributes:
+      label: Link votazione
+      placeholder: Inserisci link a votazione
