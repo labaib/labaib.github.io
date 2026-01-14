@@ -2,33 +2,25 @@ import { getDiscussions } from '/js/api.js';
 import { renderTopics } from '/js/sections/list.js';
 
 
-async function renderDashboard({
-    items,
-    containerId = 'dashboard',
-    onClick,
-    getLink,
-    showBadge = false
-}) {
-    const container = document.getElementById(containerId);
+export async function renderDashboard(items) {
+
+    const discussions = await getDiscussions(100, 1);
+
+    const container = document.getElementById('dashboard');
     container.innerHTML = '';
 
+    console.log('Rendering main dashboard with items:', items);
     items.forEach(item => {
         const col = document.createElement('div');
         col.className = 'col-card';
 
         col.innerHTML = `
             <div class="card" style="background-color: ${item.color || '#fff'}">
-                ${getLink
-                    ? `<a href="${getLink(item)}" class="stretched-link"></a>`
-                    : ''
-                }
-
-                ${showBadge
-                    ? `<span class="badge bg-primary badge-topics">
-                        ${item.badge || '0'}
-                       </span>`
-                    : ''
-                }
+                <a href="#${encodeURIComponent(item.name)}" class="stretched-link"></a>
+            
+                <span class="badge bg-primary badge-topics">
+                    ${item.badge || '0'}
+                </span>
 
                 <div class="card-body text-center">
                     <div class="icon">${item.icon || ''}</div>
@@ -41,82 +33,20 @@ async function renderDashboard({
             </div>
         `;
 
-        if (onClick) {
-            col.onclick = () => onClick(item);
+        const topics = discussions.filter(
+            d => d.category?.name === item.name
+        );
+
+
+        col.onclick = () =>  {
+            const filteredTopics = topics.filter(t =>
+                t.labels.some(l => l.name === item.title)
+            );
+            renderTopics(filteredTopics);
         }
+            
 
         container.appendChild(col);
     });
-
 }
 
-export async function renderMainDashboard(items) {
-    renderDashboard({
-        containerId: 'dashboard',
-        items,
-        getLink: c => `#${encodeURIComponent(c.name)}`,
-        showBadge: true
-    });    
-}
-
-
-export async function renderTaggedDashboard(category) {
-    const discussions = await getDiscussions(100, 1);
-
-    // discussion della categoria
-    const topics = discussions.filter(
-        d => d.category?.name === category.name
-    );
-
-    // estrai i tag (label GitHub)
-    const tags = [...new Set(
-        topics.flatMap(t => t.labels.map(l => l.name))
-    )];
-
-    const container = document.getElementById('topics-container');
-
-    container.innerHTML = `
-        <div class="d-flex justify-content-between align-items-center mb-2">
-            <h3 class="mb-0">${category.name}</h3>
-
-            <div class="d-flex gap-2">
-                <a href="#" class="btn btn-secondary">
-                    ← Torna alla Dashboard
-                </a>
-                <a
-                    type="button"
-                    class="btn btn-success"
-                    href="https://github.com/labaib/labaib.github.io/discussions/new?category=${category.name.toLowerCase()}"
-                >
-                    📝 ${category === 'Q&A'
-                        ? 'Nuova domanda'
-                        : category === 'Votazioni'
-                        ? 'Nuova votazione'
-                        : 'Nuova discussione'}
-                </a>
-            </div>
-        </div>
-
-        <div id="tag-dashboard" class="row g-4"></div>
-
-    `;
-
-    renderTopics(topics)
-
-    // 🟢 dashboard a card dei tag
-    renderDashboard({
-        containerId: 'tag-dashboard',
-        items: tags.map(tag => ({
-            title: tag,
-            icon: '🏷️',
-            color: category.color
-        })),
-        onClick: item => {
-            const filtered = topics.filter(t =>
-                t.labels.some(l => l.name === item.title)
-            );
-            renderTopics(filtered);
-        }
-    });
-
-}

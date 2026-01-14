@@ -47,42 +47,46 @@ header p { font-size: 1.2rem; }
     box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.3);
 }
 
+#nav-container {
+    height: fit-content;
+}
+
 
 /* LAYOUT GRID */
 .row.g-4 { margin: 0; row-gap: 2rem; column-gap: 2rem; display: flex; flex-wrap: wrap; justify-content: center; }
 .col-card { flex: 1 1 250px; max-width: 300px; }
 
 .topic-row {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* header */
+.topic-header {
     display: flex;
-    justify-content: space-between; /* titolo a sinistra, pulsante a destra */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* bottone Apri centrato verticalmente */
+.topic-action .btn {
+    display: inline-flex;
     align-items: center;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 0.5rem;
-    background-color: #fff;
-    border-radius: 6px;
-    transition: background-color 0.2s;
+    line-height: 1;
 }
 
-.topic-row:hover {
-    background-color: #f0f0f0;
+/* corpo espanso */
+.topic-body {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 0.5rem;
 }
 
-.topic-title {
-    font-weight: 600;
-    cursor: pointer;
+.topic-body img,
+.topic-body table {
+    max-width: 100%;
 }
-
-.topic-subject {
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 0.25rem;
-}
-
-.topic-action a.btn {
-    white-space: nowrap;
-}
-
 
 /* DASHBOARD CARD */
 .card {
@@ -106,6 +110,28 @@ header p { font-size: 1.2rem; }
 /* ICONS */
 .icon { font-size: 3rem; }
 
+.tag-badge {
+    background-color: #f1f3f5;
+    color: #212529;
+    padding: 0.45em 0.75em;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag-badge:hover {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+.tag-badge.active {
+    background-color: #0d6efd;
+    color: #fff;
+}
+
+
 /* TOPICS SECTION */
 #topics-container { 
     margin-top: 2rem; 
@@ -115,5 +141,5 @@ header p { font-size: 1.2rem; }
 
 #topics-list { 
     overflow-y: auto;
-    max-height: 35vh;
+    max-height: 70vh;
 }
