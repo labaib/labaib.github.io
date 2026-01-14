@@ -1,4 +1,4 @@
-title: ""
+title: "Titolo annuncio"
 labels: ["annuncio"]
 body:
   - type: input
