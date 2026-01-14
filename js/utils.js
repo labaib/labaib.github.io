@@ -49,7 +49,7 @@ export function clearViews() {
 export function extractOggetto(body) {
     if (!body) return null;
 
-    const match = body.match(/###\s*Oggetto dell’annuncio\s*\n+([^\n]+)/i);
+    const match = body.match(/###\s*Oggetto\s*\n+([^\n]+)/i);
     return match ? match[1].trim() : null;
 }
 
