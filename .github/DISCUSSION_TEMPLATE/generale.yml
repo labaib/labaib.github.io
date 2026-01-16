@@ -28,7 +28,7 @@ body:
       label: Link / riferimenti
       placeholder: Documenti, discussioni, risorse esterne
   - type: input
-    id: discussione
+    id: topic
     attributes:
       label: Link discussione
       placeholder: Inserisci link a discussione
