@@ -1,17 +1,25 @@
-title: "[DOMANDA] "
-labels: ["domanda"]
+title: "Domanda"
+labels: ["q&a"]
 body:
-  - type: input
-    id: titolo
-    attributes:
-      label: Oggetto della domanda
-      placeholder: Es. Esperienze con software open source per biblioteche scolastiche
-    validations:
-      required: true
   - type: textarea
-    id: dettagli
+    id: domanda
     attributes:
-      label: Dettagli
-      placeholder: Contesto, strumenti già valutati, ecc.
+      label: Domanda
+      description: Fai una domanda chiara e specifica
+      placeholder: Es. Come si aderisce all’associazione?
     validations:
       required: true
+
+  - type: textarea
+    id: contesto
+    attributes:
+      label: Contesto
+      description: Informazioni utili per capire meglio la domanda
+      placeholder: Ruolo, situazione, riferimento normativo, ecc.
+
+  - type: input
+    id: riferimenti
+    attributes:
+      label: Link / riferimenti
+      placeholder: Documentazione, pagine interne, discussioni correlate
+

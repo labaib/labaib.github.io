@@ -9,14 +9,19 @@ body:
     validations:
       required: true
   - type: textarea
-    id: richiesta
+    id: proposta
     attributes:
       label: Proposta
       placeholder: Es. commenti, adesioni, revisione
     validations:
       required: true
   - type: input
+    id: riferimenti
+    attributes:
+      label: Link / riferimenti
+      placeholder: Documenti, discussioni, risorse esterne
+  - type: input
     id: link-votazione
     attributes:
-      label: Link alla votazione (opzionale)
+      label: Link votazione
       placeholder: Inserisci link alla votazione quando approvata
